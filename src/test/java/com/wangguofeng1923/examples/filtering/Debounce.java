@@ -18,7 +18,7 @@ public class Debounce {
 	 * */
 	
 	@Test
-	public void debounce_timeout_2(){
+	public void debounce_timeout(){
 		Observable.create(new OnSubscribe<Long>() {
 			final Random random=new Random();
  
