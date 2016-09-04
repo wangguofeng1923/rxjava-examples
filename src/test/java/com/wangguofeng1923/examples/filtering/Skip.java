@@ -39,36 +39,5 @@ public class Skip {
 		
 	}
 	
-	@Test
-	public void skipUntil(){
-		
-		Observable<Long> observable = Observable.interval(2,  TimeUnit.SECONDS).take(10);
-		observable
-		.skipUntil(Observable.interval(5, TimeUnit.SECONDS))
-		.toBlocking()
-		.subscribe(System.out::println);
-
-		
-	}
-
-	@Test
-	public void skipWhile(){
-		
-		Integer[]array=	new Integer[]{4,6,8,5,0,2,9};
-		Observable<Integer> observable = Observable.from(array);
-		observable.skipUntil(Observable.interval(5, TimeUnit.SECONDS)).toBlocking().subscribe(System.out::println);
-		
-		observable.skipWhile(new Func1<Integer, Boolean>() {
-
-			@Override
-			public Boolean call(Integer v) {
-				return v%2==0;
-			}
-			
-		})
-
-		.toBlocking().subscribe(System.out::println);
-
-		
-	}
+	
 }
